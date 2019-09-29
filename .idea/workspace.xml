@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c26506bb-154f-49a4-b4f9-f9ddaee65e0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HistoPlot Test/Fig1.png" beforeDir="false" afterPath="$PROJECT_DIR$/HistoPlot Test/Fig1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HistoPlot Test/HistoMake.py" beforeDir="false" afterPath="$PROJECT_DIR$/HistoPlot Test/HistoMake.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +159,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
