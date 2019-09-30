@@ -50,8 +50,8 @@ for M in zMass:
     CleanM = [x for x in M if str(x) != 'nan']
     DATASET.append(CleanM)
 
-#COLOURS = ["b","g","r","c","m","y"]
-COLOURS = ['tab20b', "green"]
+COLOURS = ["b", "g", "r", "c", "m", "y"]
+#COLOURS = ['tab20b', "green"]
 
 x_set = []
 y_set = []
@@ -63,40 +63,5 @@ for i in range(len(DATASET)):
     x_set.append(x)
     y_set.append(y)
 
-print(labels)
-print(len(labels))
-print(len(x_set))
-laplt.create_figure(x_set, y_set, DATALABELS=labels, COLOURS=COLOURS)
-
-"""
-                            
- V     = 1e5                             #Survey volume in Mpc3
- Phi,edg = np.histogram(CleanM,bins=nbins) #Unnormalized histogram and bin edges
- print(edg)
- dM    = edg[1] - edg[0]                 #Bin size
- Masx   = edg[0:-1] + dM/2.               #Mass axis
- Phi   = Comp*Phi / V / dM                    #Normalize to volume and bin size
- #print(Phi)
- MASK2=(Phi !=0.)
- Masx=Masx[MASK2]
- Phi= Phi[MASK2]
- #CleanPhi = [x for x in M if str(x) != 'nan']
- Phis.append(Phi)
- Masxs.append(Masx)
- #Create the Respective labels
-labels=[]
-for y,x in zip(Zs,zErrors):
- z='z=' + str(y) + '$\pm$' + str(x)
- labels.append(z)
-for i in np.arange(0, len(labels),1):
- Ms=Masxs[i]
- Ps=Phis[i]
- Ls=labels[i]
- plt.plot(Ms,Ps, marker='o',label=Ls)
-plt.yscale('log')
-plt.xlabel(r'$\log(M_\star\,/\,M_\odot)$')
-plt.ylabel(r'$\Phi\,/\,\mathrm{dex}^{-1}\,\mathrm{Mpc}^{-3}$')
-plt.tight_layout()
-plt.legend()
-plt.show()
-"""
+laplt.create_figure(x_set, y_set, DATALABELS=labels, COLOURS=COLOURS, FILL_COLOURS=COLOURS, POINTSTYLES=['-'],
+                    x_label=r'$\log(M_\star\,/\,M_\odot)$', y_label=r'$\Phi\,/\,\mathrm{dex}^{-1}\,\mathrm{Mpc}^{-3}$')

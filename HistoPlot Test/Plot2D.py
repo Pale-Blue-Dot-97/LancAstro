@@ -172,12 +172,12 @@ def plot(x,y,x_error=[None],y_error=[None],DATALABELS=[None],COLOURS=[None],
         if print_on == True:
             pb.printProgressBar(i,len(x),prefix='PLOTTING VARIABLE %d'%(i+1),
                                 suffix='COMPLETE',length=40)
-        
+
         # Plot x and y within parameters
         PLOT = plt.errorbar(np.array(x[i]),np.array(y[i]),xerr=x_error[i],
                             yerr=y_error[i],color=COLOURS[i],ms=SIZES[i],
                             fmt=POINTSTYLES[i],mec=EDGECOLOURS[i],
-                            lw=LWID[i],elinewidth=ERBWID[i],mew=EDGEWID[i])  
+                            lw=LWID[i],elinewidth=ERBWID[i],mew=EDGEWID[i])
 
         # Appends the artist label for this plot to HANDLES for legend entry
         if DATALABELS[i] != None:
@@ -394,7 +394,7 @@ display_figure = True           # Opens figure if true
 
 save_fig = True                 # Saves the figure to file if true
 
-print_on = False                 # Includes print statements in output if true
+print_on = True                 # Includes print statements in output if true
 
 # POINTS & FILL PARAMETERS ===================================================
 POINTSTYLES = ['*','o']         # Point style
@@ -411,7 +411,7 @@ y_max = 10.0                # Maximum y-axis value to plot
 axis_range = [x_min,x_max,y_min,y_max]
 
 x_scale = 'linear'          # Defines x-axis scaling
-y_scale = 'linear'          # Defines y-axis scaling 
+y_scale = 'linear'          # Defines y-axis scaling
 
 auto_axis = True            # Auto define dimesions of axises
 

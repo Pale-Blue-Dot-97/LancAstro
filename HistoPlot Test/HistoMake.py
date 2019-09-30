@@ -95,19 +95,19 @@ def make_bins(a, bin_min=None, bin_max=None, bin_wid=1, n=10):
     if normalise:
         counts = counts / norm
 
-    return counts, bins, bin_min, bin_max
+    return counts, bins, bin_min, bin_max, bin_wid
 
 
 def output_bins_to_plot(a, bin_min=None, bin_max=None, bin_wid=1, n=10):
     """
     """
 
-    counts, bins, bin_min, bin_max = make_bins(a, bin_min, bin_min, bin_wid, n)
+    counts, bins, bin_min, bin_max, bin_wid = make_bins(a, bin_min, bin_min, bin_wid, n)
 
     # Constructs the extra points either side of the mid-point of the bin to
     # plot
     x = [bin_min]  # Array of x-axis plot points (bin edges)
-    y = [np.max(counts)]  # Array of y-axis plot points (count values for each bin)
+    y = [0.0]  # Array of y-axis plot points (count values for each bin)
 
     for j in range(len(bins)):
         # Left edge
@@ -123,7 +123,7 @@ def output_bins_to_plot(a, bin_min=None, bin_max=None, bin_wid=1, n=10):
         y.append(counts[j])
 
     x.append(bin_max)
-    y.append(np.min(counts))
+    y.append(0.0)
 
     return x, y, bin_min, bin_max
 
