@@ -33,7 +33,7 @@ def _get_outer_edges(a):
     
     Edited from Numpy source code:
     https://github.com/numpy/numpy/blob/master/numpy/lib/histograms.py
-    
+
     """
 
     RANGE = np.min(a), np.max(a)

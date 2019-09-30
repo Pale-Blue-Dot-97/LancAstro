@@ -3,7 +3,8 @@ import math
 import pandas as pd
 import numpy as np
 from astropy.io import fits
-import HistoPlot as hp
+import HistoMake as hm
+import Plot2D as laplt
 
 NBs=[392, 501, 711, 816]
 IAs=[427, 464, 484, 505, 527, 574, 624, 679, 709, 738, 767, 827]
@@ -32,35 +33,43 @@ Redshift = np.array(data['LAE_Redshift'])
 Xray= np.array(data['XRAY_DET'])
 Radio=np.array(data['RADIO_DETECTED'])
 uniqueZ=np.unique(Redshift)
-#print(uniID)
-#print(uniqueZ)
+
 for j,k in zip(Zs,zErrors):
- #print(j)
- MASK =(Comments!=[' B '])*(Comments!=[' DB'])*(Redshift<=j+k)*(Redshift>=j-k)*(Radio==False)*(Xray==False)
- New_mass=AllMass[MASK]
- zMass.append(New_mass)
- #print(New_mass)
+    MASK =(Comments!=[' B '])*(Comments!=[' DB'])*(Redshift<=j+k)*(Redshift>=j-k)*(Radio==False)*(Xray==False)
+    New_mass=AllMass[MASK]
+    zMass.append(New_mass)
 
 labels=[]
 for y,x in zip(Zs,zErrors):
- z='z=' + str(y) + '$\pm$' + str(x)
- labels.append(z)
+    z='z=' + str(y) + '$\pm$' + str(x)
+    labels.append(z)
 
 DATASET = []
 
 for M in zMass:
- #M     = np.array(data['Mstar_1'])       #Read stellar masses in logMsun
- CleanM = [x for x in M if str(x) != 'nan']
- DATASET.append(CleanM)
+    CleanM = [x for x in M if str(x) != 'nan']
+    DATASET.append(CleanM)
 
 #COLOURS = ["b","g","r","c","m","y"]
-COLOURS = ['tab20b',"green"]
+COLOURS = ['tab20b', "green"]
 
-#print("Printing dataset")
-#print (CleanM)
-hp.create_figure(DATASET,labels,COLOURS)
+x_set = []
+y_set = []
+
+nbins = 10 # Number of bins to divide data into
+
+for i in range(len(DATASET)):
+    x, y, bin_min, bin_max = hm.output_bins_to_plot(DATASET[i], n=nbins)
+    x_set.append(x)
+    y_set.append(y)
+
+print(labels)
+print(len(labels))
+print(len(x_set))
+laplt.create_figure(x_set, y_set, DATALABELS=labels, COLOURS=COLOURS)
+
 """
- nbins = 10                            #Number of bins to divide data into
+                            
  V     = 1e5                             #Survey volume in Mpc3
  Phi,edg = np.histogram(CleanM,bins=nbins) #Unnormalized histogram and bin edges
  print(edg)
