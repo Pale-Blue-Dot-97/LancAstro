@@ -51,7 +51,6 @@ for M in zMass:
     DATASET.append(CleanM)
 
 COLOURS = ["b", "g", "r", "c", "m", "y"]
-#COLOURS = ['tab20b', "green"]
 
 x_set = []
 y_set = []
