@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c26506bb-154f-49a4-b4f9-f9ddaee65e0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dependencies/ascii_read.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dependencies/ascii_read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LancAstro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LancAstro.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HistoMake.py" beforeDir="false" afterPath="$PROJECT_DIR$/HistoMake.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +22,12 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MultiFig Test/Dependencies" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Harry\Documents\Documents\GitHub\LancAstro" />
       <recent name="C:\Users\hjbak\Documents\University\XGAL Internship 2019\LancAstro\MultiFig Test\Dependencies" />
     </key>
   </component>
@@ -194,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569946190948</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Reformatted ascii_read to comply with PEP8">
+      <created>1569946463764</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569946463764</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +227,7 @@
     <MESSAGE value="Clean up NewSMFZ" />
     <MESSAGE value="Reformatted DataLoad and removed unused config files" />
     <MESSAGE value="Reformatted progress_bar to comply with PEP8" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformatted progress_bar to comply with PEP8" />
+    <MESSAGE value="Reformatted ascii_read to comply with PEP8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformatted ascii_read to comply with PEP8" />
   </component>
 </project>
