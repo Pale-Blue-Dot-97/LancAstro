@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c26506bb-154f-49a4-b4f9-f9ddaee65e0c" name="Default Changelist" comment="Fix HistoMake">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HistoPlot Test/Fig1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/HistoPlot Test/Fig1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HistoPlot Test/NewSMFZ.py" beforeDir="false" afterPath="$PROJECT_DIR$/HistoPlot Test/NewSMFZ.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
