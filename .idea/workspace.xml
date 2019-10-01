@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c26506bb-154f-49a4-b4f9-f9ddaee65e0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/DataLoad.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dependencies/DataLoad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/block_3x3.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/default.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/default.nnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/gauss_1.5_3x3.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/gauss_2.0_3x3.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/gauss_2.0_5x5.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/gauss_2.5_5x5.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/gauss_3.0_5x5.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/gauss_3.0_7x7.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/gauss_4.0_7x7.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/gauss_5.0_9x9.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/mexhat_2.0_7x7.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/mexhat_2.5_7x7.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/mexhat_3.0_9x9.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/mexhat_4.0_9x9.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/photometry.param" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/photometry.sex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/tophat_1.5_3x3.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/tophat_2.0_3x3.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/tophat_2.5_3x3.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/tophat_3.0_3x3.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/tophat_4.0_5x5.conv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/tophat_5.0_5x5.conv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dependencies/progress_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dependencies/progress_bar.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569940019989</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Reformatted DataLoad and removed unused config files">
+      <created>1569946099465</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569946099465</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +207,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Fix HistoMake" />
     <MESSAGE value="Clean up NewSMFZ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean up NewSMFZ" />
+    <MESSAGE value="Reformatted DataLoad and removed unused config files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformatted DataLoad and removed unused config files" />
   </component>
 </project>
