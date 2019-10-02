@@ -57,7 +57,6 @@ def default_lengths(param, n_var):
 
     Args:
         param (np.array): Parameter array to be set to correct length
-
         n_var (int): Number of variables therefore the length to set param to
 
     Return:
@@ -70,7 +69,7 @@ def default_lengths(param, n_var):
 
     # Checks if every parameter is the length of the number of variables
     if len(param) != n_var:
-        if print_on == True:
+        if print_on:
             print("WARNING: Not every variable has defined range limits!")
             print("Setting all variables to default of 1st entry \n")
 
@@ -274,7 +273,7 @@ def add_borders(axis_range):
 def create_figure(x, y, x_error=[None], y_error=[None], DATALABELS=[None], COLOURS=[None], FILL_COLOURS=[None],
                   SHADE=[0.5], SIZES=[None], POINTSTYLES=['none'], EDGECOLOURS=[None], EDGEWID=[2], LWID=[2],
                   ERBWID=[2], figure_name="Fig1.pdf", x_label='x-label', y_label='y-label', figsize=(10, 10),
-                  axis_range=[0.0, 10.0, 0.0, 10.0], txt_labels=[[None]], x_ticks=None, x_tick_labels=None,
+                  axis_range=[0.0, 10.0, 0.0, 10.0], x_ticks=None, x_tick_labels=None,
                   y_ticks=None, y_tick_labels=None):
     """ Method capable of plotting multiple sets of 2D variables
 
