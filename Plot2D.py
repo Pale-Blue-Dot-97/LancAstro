@@ -1,61 +1,31 @@
-#=============================================================================
-#================================ PLOT2D =====================================
-#=============================================================================
-#
-# Script for 2D plotting of data stored in FITS files, ascii tables
-#
-# Author: Harry Baker
-# Date: 31.07.2019
-# Version: 1.3
-# == RELEASE ==
-#
-# Part of the LancAstro.py project for XGAL
-# 
-# CHANGE LOG:
-#   V1.2:
-#     -Add method add_borders to add a 10% border to axis range if auto_axis
-#      is on
-#     -Fixed issue with plot method whereby linewidth optional arguement in
-#      pyplot.errorbar would overide width of error bars and therefore on
-#      default would cause error bars not to appear
-#     -Added LWID parameter array to independent of marker size, set line 
-#      width
-#   V1.1:
-#     -Added convert_to_array method to check and correct if supplied
-#      parameters are arrays
-#     -Added save_fig option to parameters to toggle saving of figures to file
-#     -Added SHADE parameter array so plots can have fills underneath
-#   
-#   V1.0:
-#     -Renamed ScatterPlot to Plot2D for its Version 1 release for LancAstro!
-#     -Added print_on option to parameters to toggle print to terminal
-#     -Added display_figure option to parameters to toggle the figure pop-up
-#     -Added x_label and y_label option args to create_figure method so that
-#      user can define axis labels from invoking of method
-#     -Added axis_range optional args to create_figure method so that user
-#      can define axis dimensions from invoking of method
-#     -Added legend_on option to parameters to toggle creation of legend
-#     -Fixed issue with plot method where a None arguememt for 'fmt' option
-#      of pyplot.errorbar is depreciated
-#     -Converted plot method to support scatter, errorbars and line plots   
-#
-version = "1.3"
+# =====================================================================================================================
+# ===================================================== PLOT2D ========================================================
+# =====================================================================================================================
+"""Script for 2D plotting of data stored in FITS files, ascii tables
+
+Part of the LancAstro.py project for XGAL
+
+Author: Harry Baker
+Date: 31.07.2019
+Version: 1.3
+== RELEASE ==
+
+"""
+
 # ============================================================================
 #                             IMPORTS   
 # ============================================================================
 
-import os, sys
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-from astropy.io import fits as pyfits
 import numpy as np 
 import random
-import Dependencies.ascii_read as ar
 import Dependencies.progress_bar as pb
 
 # ============================================================================
 #                           FUNCTIONS
 # ============================================================================
+
 
 def convert_to_array(var):
     """ Checks if parameter supplied is an array and corrects if not
@@ -71,6 +41,7 @@ def convert_to_array(var):
         var = np.array(var)
 
     return var
+
 
 def default_lengths(param, n_var):
     """
@@ -102,7 +73,8 @@ def default_lengths(param, n_var):
 
     return param
 
-def colour_cycle(n_var,COLOURS):
+
+def colour_cycle(n_var, COLOURS):
     if len(COLOURS) != n_var:
         for i in range(n_var):
             r = lambda: random.randint(0,255)
@@ -112,7 +84,8 @@ def colour_cycle(n_var,COLOURS):
             else:
                 COLOURS.append(random_colour)
 
-def construct_ticks(axis_range,num_x,num_y):
+
+def construct_ticks(axis_range, num_x, num_y):
     x_step = (axis_range[1] - axis_range[0])/float(num_x)
     y_step = (axis_range[3] - axis_range[2])/float(num_y)
 
@@ -121,9 +94,9 @@ def construct_ticks(axis_range,num_x,num_y):
 
     return x_ticks,y_ticks
 
-def plot(x,y,x_error=[None],y_error=[None],DATALABELS=[None],COLOURS=[None],
-         FILL_COLOURS=[None],SHADE=[0.5],SIZES=[None],POINTSTYLES=['none'],
-         EDGECOLOURS=[None],EDGEWID=[None],LWID=[2],ERBWID=[2]):
+
+def plot(x, y, x_error=[None], y_error=[None], DATALABELS=[None], COLOURS=[None], FILL_COLOURS=[None], SHADE=[0.5],
+         SIZES=[None], POINTSTYLES=['none'], EDGECOLOURS=[None], EDGEWID=[None], LWID=[2], ERBWID=[2]):
     """ Method capable of plotting multiple sets of 2D variables
 
     Args:
@@ -197,7 +170,7 @@ def plot(x,y,x_error=[None],y_error=[None],DATALABELS=[None],COLOURS=[None],
     return HANDLES
 
 
-def determine_axis(x,y):
+def determine_axis(x, y):
     """ Determines the min and max of x and y axis from data bounds
 
     Args:
@@ -211,7 +184,7 @@ def determine_axis(x,y):
 
     # Tells Python to edit these variables globally not locally 
     # i.e everywhere, not just in this method 
-    global x_min,x_max,y_min,y_max,axis_range
+    global x_min, x_max, y_min, y_max, axis_range
 
     # Arrays to hold the min/max of each variable of DATASET's x and y 
     x_mins = []
@@ -234,6 +207,7 @@ def determine_axis(x,y):
     axis_range = add_borders(axis_range)
 
     return axis_range
+
 
 def add_borders(axis_range):
     """ Adds a 10% extra border to the axis dimensions
@@ -261,13 +235,11 @@ def add_borders(axis_range):
 
     return axis_range
 
-def create_figure(x,y,x_error=[None],y_error=[None],DATALABELS=[None],
-                  COLOURS=[None],FILL_COLOURS=[None],SHADE=[0.5],SIZES=[None],
-                  POINTSTYLES=['none'],EDGECOLOURS=[None],EDGEWID=[2],
-                  LWID=[2],ERBWID=[2],figure_name="Fig1.pdf",
-                  x_label='x-label',y_label='y-label',figsize=(10,10),
-                  axis_range=[0.0,10.0,0.0,10.0],txt_labels=[[None]],
-                  x_ticks=None,x_tick_labels=None,y_ticks=None,
+
+def create_figure(x, y, x_error=[None], y_error=[None], DATALABELS=[None], COLOURS=[None], FILL_COLOURS=[None],
+                  SHADE=[0.5], SIZES=[None], POINTSTYLES=['none'], EDGECOLOURS=[None], EDGEWID=[2], LWID=[2],
+                  ERBWID=[2], figure_name="Fig1.pdf", x_label='x-label', y_label='y-label', figsize=(10,10),
+                  axis_range=[0.0,10.0,0.0,10.0], txt_labels=[[None]], x_ticks=None, x_tick_labels=None, y_ticks=None,
                   y_tick_labels=None):
     """ Creates a figure (or multiple figures) of the plots of data supplied
 
@@ -289,7 +261,7 @@ def create_figure(x,y,x_error=[None],y_error=[None],DATALABELS=[None],
 
     # WELCOME MESSAGE ========================================================
     if print_on == True:    
-        print("\nWELCOME TO Plot2D %s"%version)
+        print("\nWELCOME TO Plot2D")
         print("PART OF THE LancAstro PACKAGE \n")
 
     # Sets up the figure size from parameters before plotting commences  
@@ -300,10 +272,9 @@ def create_figure(x,y,x_error=[None],y_error=[None],DATALABELS=[None],
     plt.yscale(y_scale)
 
     # Calls plot method to plot each variable from the dataset    
-    HANDLES = plot(x,y,x_error=x_error,y_error=y_error,DATALABELS=DATALABELS,
-                   COLOURS=COLOURS,FILL_COLOURS=FILL_COLOURS,SHADE=SHADE,
-                   SIZES=SIZES,POINTSTYLES=POINTSTYLES,EDGEWID=EDGEWID,
-                   EDGECOLOURS=EDGECOLOURS,LWID=LWID,ERBWID=ERBWID)
+    HANDLES = plot(x, y, x_error=x_error, y_error=y_error, DATALABELS=DATALABELS, COLOURS=COLOURS,
+                   FILL_COLOURS=FILL_COLOURS, SHADE=SHADE, SIZES=SIZES, POINTSTYLES=POINTSTYLES, EDGEWID=EDGEWID,
+                   EDGECOLOURS=EDGECOLOURS, LWID=LWID, ERBWID=ERBWID)
 
     # If set to, automatically sets the min and max of the axis
     # from the range of all the data
