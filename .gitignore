@@ -10,3 +10,4 @@ HistoPlot Test/__pycache__/Plot2D.cpython-37.pyc
 .idea
 *.pdf
 *.xml
+__pycache__
