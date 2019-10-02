@@ -1,25 +1,39 @@
-# ============================================================================
-#                             IMPORTS   
-# ============================================================================
+# =================================================== DATALOAD ========================================================
+"""
+Module to load data from FITS files into a 2D array.
+Part of LancAstro.py project
 
-from astropy.io import fits as pyfits
-import Plot3D as laplt
-import Dependencies.progress_bar as pb
+Author: Harry Baker
+
+Example:
+
+Todo:
+    * Upgrade data_load() to handle ASCII, csv and excel files
+
+"""
+
+# =====================================================================================================================
+#                                                     IMPORTS
+# =====================================================================================================================
+
+from astropy.io import fits as pyfits       # To handle FITS files
+import Plot2D as laplt                      # Uses Plot2D's settings as master
+import Dependencies.progress_bar as pb      # To display a progress bar in output if print_on==True in Plot2D
 
 
-# ============================================================================
-#                           FUNCTIONS
-# ============================================================================
-# DATA LOADING ===============================================================
+# =====================================================================================================================
+#                                                    FUNCTIONS
+# =====================================================================================================================
+# DATA LOADING ========================================================================================================
 
 def data_load(DATANAME, COLUMNNAME, PATH=['']):
     """Load data in from columns in a FITS file
     
     Args:
-        DATANAME: Array of strings with names of the FITS file containing the data to be loaded
+        DATANAME ([str]): Array of strings with names of the FITS file containing the data to be loaded
 
-        COLUMNNAME: 2D array of strings with first axis being of equal length to DATANAME, and the second axis being
-            the names of the columns to be loaded from each FITS file in DATANAME
+        COLUMNNAME ([[str]]): 2D array of strings with first axis being of equal length to DATANAME, and the second axis
+            being the names of the columns to be loaded from each FITS file in DATANAME
 
         PATH: Optional variable that is a list of strings for paths to each FITS file. Should be same length as DATANAME
 
@@ -34,7 +48,7 @@ def data_load(DATANAME, COLUMNNAME, PATH=['']):
     PATH = laplt.default_lengths(PATH, len(DATANAME))
 
     if laplt.print_on:
-        # Intialises the progress bar for loading the data
+        # Initialises the progress bar for loading the data
         pb.printProgressBar(0, 2 * len(DATANAME) * sum(len(x) for x in COLUMNNAME), prefix='LOADING DATA:',
                             suffix='COMPLETE', length=40)
 
