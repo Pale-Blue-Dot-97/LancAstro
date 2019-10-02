@@ -1,11 +1,12 @@
-# PROGRESS_BAR
-#
-# Small module to print a progress bar to screen 
-#
-# Source: https://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
-#
-# Version: 1.0
-#
+# ================================================= PROGRESS_BAR ======================================================
+"""Small module to print a progress bar to screen
+
+Source: https://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
+
+Author: Harry Baker
+Version: 1.0
+
+"""
 
 
 def printProgressBar (iteration, total, prefix='', suffix='', decimals=1, length=100, fill='█'):
@@ -20,10 +21,15 @@ def printProgressBar (iteration, total, prefix='', suffix='', decimals=1, length
         length      - Optional  : character length of bar (Int)
         fill        - Optional  : bar fill character (Str)
     """
+
     percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
+
     filledLength = int(length * iteration // total)
+
     bar = fill * filledLength + '-' * (length - filledLength)
+
     print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')
+
     # Print New Line on Complete
     if iteration == total: 
         print()
