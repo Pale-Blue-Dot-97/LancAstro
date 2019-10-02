@@ -32,8 +32,8 @@ Radio = np.array(data['RADIO_DETECTED'])
 uniqueZ = np.unique(Redshift)
 
 for j, k in zip(Zs, zErrors):
-    MASK = (Comments != [' B ']) * (Comments != [' DB']) * (Redshift <= j + k) * (Redshift >= j - k) * (
-            Radio == False) * (Xray == False)
+    MASK = (Comments != [' B ']) * (Comments != [' DB']) * (Redshift <= j + k) * (Redshift >= j - k) * \
+           (Radio == False) * (Xray == False)
     New_mass = AllMass[MASK]
     zMass.append(New_mass)
 
